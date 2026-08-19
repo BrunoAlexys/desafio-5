@@ -24,7 +24,7 @@ jobs:
   build:
     name: 2. Build Application
     runs-on: ubuntu-latest
-    needs: sast
+    
     steps:
       - name: Checkout code
         uses: actions/checkout@v5
@@ -104,8 +104,7 @@ jobs:
       localstack:
         image: localstack/localstack:latest
         ports:
-          - 4566:4566
-          - 4510-4559:4510-4559
+          - "4566:4566"
         env:
           SERVICES: ec2
           DEFAULT_REGION: us-east-1
